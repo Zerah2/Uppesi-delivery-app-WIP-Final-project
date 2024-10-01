@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppesi Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Uppesi delivery Logo.png" alt="Uppesi Logo" class="logo">
+            <h1>Uppesi</h1>
+        </div>
+        <div class="user-profile">
+            <button onclick="location.href='profile.html'">Profile</button>
+            
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Orders</h2>
+            <ul>
+                <li><img src="Icons uppesi/dashboard.png" alt="Dashboard Icon"><a href="#">Dashboard</a></li>
+                <li><img src="Icons uppesi/order.png" alt="Orders Icon"><a href="#">Orders</a></li>
+                <li><img src="Icons uppesi/merchant.png" alt="Merchants Icon"><a href="#">Merchants</a></li>
+                <li><img src="Icons uppesi/configuration.png" alt="Accounting Icon"><a href="#">Accounting</a></li>
+                <li><img src="Icons uppesi/customers.png" alt="Customers Icon"><a href="#">Customers</a></li>
+                <li><img src="Icons uppesi/reviews.png" alt="Product Reviews Icon"><a href="#">Product Reviews</a></li>
+            </ul>
+
+            <h2>Settings</h2>
+            <ul>
+                <li><img src="Icons uppesi/profile.png" alt="Profile Icon"><a href="#">Profile</a></li>
+                <li><img src="Icons uppesi/customize.png" alt="Customize Icon"><a href="#">Customize</a></li>
+                <li><img src="Icons uppesi/styling.png" alt="Styling Icon"><a href="#">Styling</a></li>
+                <li><img src="Icons uppesi/cms.png" alt="CMS Icon"><a href="#">CMS</a></li>
+                <li><img src="Icons uppesi/catalogue.png" alt="Catalog Icon"><a href="#">Catalog</a></li>
+                <li><img src="Icons uppesi/configuration.png" alt="Configurations Icon"><a href="#">Configurations</a></li>
+                <li><img src="Icons uppesi/tax.png" alt="Tax Icon"><a href="#">Tax</a></li>
+            </ul>
+
+            <h2>Marketing</h2>
+        </aside>
+
+        <main class="main-content">
+            <section class="dashboard-cards">
+                
+                <div class="card pending-orders">
+                    <h3>Pending Orders</h3>
+                    <p>0</p>
+                </div>
+                <div class="card active-orders">
+                    <h3>Active Orders</h3>
+                    <p>9</p>
+                </div>
+                <div class="card delivered-orders">
+                    <h3>Delivered Orders</h3>
+                    <p>6</p>
+                </div>
+                <div class="card cancelled-orders">
+                    <h3>Cancelled Orders</h3>
+                    <p>0</p>
+                </div>
+                
+                <div class="card categories">
+                    <h3>Categories</h3>
+                    <p>0</p>
+                </div>
+                <div class="card products">
+                    <h3>Products</h3>
+                    <p>10</p>
+                </div>
+                <div class="card vendor">
+                    <h3>Vendor</h3>
+                    <p>2</p>
+                </div>
+                <div class="card return-request">
+                    <h3>Return Request</h3>
+                    <p>0</p>
+                </div>
+            </section>
+
+            <section class="analytics-section">
+                <h2>Sales Analytics</h2>
+
+                <div class="filter-panel">
+                    <button id="weekBtn" onclick="filterData('week')">Week</button>
+                    <button id="monthBtn" onclick="filterData('month')">Month</button>
+                    <button id="yearBtn" onclick="filterData('year')">Year</button>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </section>
+
+            <section class="map-section">
+                <h2>Location Map (Nairobi, Kenya)</h2>
+                <div id="map"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
